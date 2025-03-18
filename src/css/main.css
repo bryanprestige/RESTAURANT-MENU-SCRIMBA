@@ -1,132 +1,238 @@
 body {
-    display: block;
     max-width: 100%;    
     max-height: 100%;
     text-align: center;
-    font-family:'Courier New', Courier, monospace;
-    background-color:#C6C6C6;
-    margin: auto;
+    font-family:'Times New Roman', Times, serif
 }
 
-header {
+header{
+    width: 600px;
+    height: 167px;
+    background-image: url('../assets/restaurant-banner.png');
+    background-size: cover;
     display: flex;
-    justify-content:space-evenly;
-    width: 375px;
-    height: 67px;
-    border-bottom: 1px solid #E5E5E5;
-    background-color: white;
-}
-
-#logo{
-    width: 127px;
-    height: 33px;
     margin: auto;
-    margin-right: 200px;
-}
-
-#profile-pic{
-    width: 34px;
-    height: 34px;
-    border-radius: 50px;
-    margin: auto;
-    margin-right: 30px;
-}
-
-#post {
-    width: 375px;
-    height: 545px;
-    display: flex;
     flex-direction: column;
-    background-color: white;
+    justify-content: center;
+    align-items: center;
 }
 
-#profile-info {
+h1{
+    color: white;
+    font-weight: 400px;
+    font-size: 39px;
+    margin-right: 330px;
+}
+
+h2{
+    color: white;
+    font-weight: 400px;
+    font-size: 22px;
+    margin-right: 240px;
+
+}
+
+.menu {
     display: flex;
-    width: 348px;
-    height: 34px;
-    margin: auto;
+    width: 508px;
+    height: 140px;
+    margin: 0px auto;
+    border-bottom: #DEDEDE 1.5px solid;
+    justify-content:space-between;
+    padding: 20px;
 }
 
-#user-picture {
-    width: 34px;
-    height: 34px;
-    border-radius: 10px;
-}
-
-#user-text {
-    display: flex;
-    flex-direction: column;
-    margin-left: 10px; /* adjust the margin to your liking */
-}
-
-h1 {
-    font-weight: 700;
-    font-size: 13px;
-    margin-top: 5px;
-    margin-bottom: -10px; /* add some space between h1 and h2 */
-}
-
-h2 {
-    font-weight: 400;
-    font-size: 12px;
-}
-
-.post-image {
-    width: 375px;
-    height: 375px;
-}
-
-#icons-container {
-    display: flex;
-    width: 104px;
-    height: 22px;
-    justify-content: start;
+.food-icon{
+    width: 70px;
+    height: 89px;
     margin-top: 20px;
-    gap: 10px;
-    margin-left: 8px;
 }
 
-button{
+.food-info{
+    text-align: left;
+    margin-right: 130px;
+}
+
+.food-name{
+    font-weight: 400px;
+    font-size: 28px;
+    margin-top: 35px;
+}
+
+.ingredients{
+    font-weight: 200px;
+    font-size: 16px;
+    color: #8B8B8B;
+    margin-top: -20px;
+}   
+
+.price{
+    font-weight: 400px;
+    font-size: 20px;
+    margin-top: -10px;
+
+}
+
+.plus-button {
     background-color: transparent;
+    border-radius: 50px;
     border: none;
-    cursor: pointer;
+    align-items: end;
 }
 
-button:hover{
-    opacity: 0.5;
+.plus-icon{
+    width: 50px;
 }
 
-
-.icons {
-    width: 23px;
+#your-orders{
+    display: flex;
+    flex-direction: column;
 }
 
-#comment-logo{
-    margin-top: 3px;
+.your-orders-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px;
 }
 
-#send-logo{
-    margin-top: 3px;
+.your-food {
+    font-weight: 400px;
+    font-size: 28px;
 }
 
+.remove-button{
+    background-color: transparent;
+    color: #8B8B8B;
+    border-radius: 50px;
+    border: none;
+    margin-right: 300px;
+}
 
-h3{
-    width: 343px;
-    height: 16px;
+.food-price{
+    font-weight: 400px;
+    font-size: 20px;
+}
+
+#your-order-container{
+    display: none;
+}
+
+#your-order-section{
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    width: 550px;
+}
+
+#your-order-title{
+    font-weight: 400px;
+    font-size: 28px;
+    margin-top: 30px;
+}
+
+#total-price-container{
+    display: flex;
+    border-top: 2px solid black;
+    margin-top: 10px;
+    padding: 10px;
+    justify-content:space-between;
+}
+
+#total-price-text{
+    font-weight: 400px;
+    font-size: 28px;
+}
+
+#total-price{
+    font-weight: 400px;
+    font-size: 20px;
+}
+
+#complete-order-button{
+    width: 550px;
+    margin: auto;
+    background-color: #16DB99;
+    border-radius: 3px;
+    transition: all .2s ease-in;
+    padding: 15px;
     font-weight: 700;
-    font-size: 13px;
-    text-align: left;
+    font-size: 16px;
+    color: white;
+}
+
+#complete-order-button:hover{
+    text-shadow: #8B8B8B 1px 1px 2px;
+    transform: scale(1.01);
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    height: 542px;
+    width: 524px;
+    border-radius: 4px;
+    box-shadow: 0px 0px 6px 2px #666;
+    background-color: white;
+    color: whitesmoke;
+}
+
+#checkout-title {
+    color: black;
+    font-weight: 700;
+    font-size: 24px;
+    padding: 20px;
+}
+ 
+#input-form-container{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 400px;
+    padding: 20px;
+}
+
+input{
+    width: 475px;
+    height: 70px;
+    text-align: center;
+    border-radius: 3px;
+    border: 1.5px solid #757575;
+}
+
+#checkout-button{
+    width: 475px;
+    height: 70px;
+    background-color: #16DB99;
+    color: white;
+    font-weight: 700;
+    font-size: 20px;
+    margin: auto;
+}
+
+#cancel-button{
+    width: 475px;
+    height: 70px;
+    background-color: #c93006;
+    color: white;
+    font-weight: 700;
+    font-size: 20px;
+    margin: auto;
+}
+
+.complete-order-message{
+    width: 504px;
+    font-weight: 400px;
+    font-size: 32px;
+    padding: 15px;
     margin: auto;
     margin-top: 20px;
+    text-align: center;
+    background-color: #ECFDF5;
+    color: #065F46;
 }
-
-h4{
-    width: 343px;
-    height: 16px;
-    font-weight: 400;
-    font-size: 13px;
-    text-align: left;
-    margin: auto;
-}
-
-

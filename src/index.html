@@ -3,18 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Oldagram Scrimba</title>
+    <title>Food Menu Scrimba</title>
     <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./css/main.css">
-    <script type="module" src="./js/component/OldagramPost.js" defer></script>
+    <script type="module" src="./js/component/FoodMenu.js" defer></script>
     <script type="module" src="./js/main.js"></script>
 </head>
 <body>
     <header>
-
-        <img id="logo" src="./assets/oldagram-logo.png" alt="Oldagram Logo">
-        <img id="profile-pic" src="./assets/profile-pic.png" alt="Profile Picture">
+        <h1>Jimmy’s Diner</h1>
+        <h2>The best burgers and pizzas in town.</h2>
     </header>
-    <section id="feed-container"></section>
+    <section id="menu-container"></section>
+    <section id="your-order-container" >
+        <div id="your-order-section">
+            <h7 id="your-order-title">Your Order</h7>
+            <div id="your-orders"></div>
+            <div id="total-price-container">
+                <h8 id="total-price-text">Total Price</h8>
+                <h9 id="total-price">£0</h9>
+            </div>
+            <button id="complete-order-button">Complete Order</button>
+        </div>
+    </section>
+    <div class="modal" id="modal">
+        <form id="checkout-form">
+            <h3 id="checkout-title">Enter card details</h3>
+            <div id="input-form-container">
+                <input type="text" name="name" id="name" placeholder="Name" required>
+                <input type="text" name="card-number" id="card-number" placeholder="1234-5678" required>
+                <input type="text" name="card-pin" id="card-pin" placeholder="123" required>
+                <button type="click" id="checkout-button">Pay</button>
+                <button type="click" id="cancel-button">Cancel</button>
+            </div>
+        </form>
+    </div>
 </body>
 </html  
