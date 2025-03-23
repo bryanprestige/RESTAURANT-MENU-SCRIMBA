@@ -6,7 +6,7 @@ body {
 }
 
 header{
-    width: 600px;
+    width: 40%;
     height: 167px;
     background-image: url('../assets/restaurant-banner.png');
     background-size: cover;
@@ -29,12 +29,11 @@ h2{
     font-weight: 400px;
     font-size: 22px;
     margin-right: 240px;
-
 }
 
 .menu {
     display: flex;
-    width: 508px;
+    width: 38%;
     height: 140px;
     margin: 0px auto;
     border-bottom: #DEDEDE 1.5px solid;
@@ -43,7 +42,7 @@ h2{
 }
 
 .food-icon{
-    width: 70px;
+    width: 10%;
     height: 89px;
     margin-top: 20px;
 }
@@ -70,7 +69,6 @@ h2{
     font-weight: 400px;
     font-size: 20px;
     margin-top: -10px;
-
 }
 
 .plus-button {
@@ -120,9 +118,9 @@ h2{
 
 #your-order-section{
     display: flex;
+    width: 39%;
     flex-direction: column;
     margin: auto;
-    width: 550px;
 }
 
 #your-order-title{
@@ -150,7 +148,7 @@ h2{
 }
 
 #complete-order-button{
-    width: 550px;
+    width: 100%;
     margin: auto;
     background-color: #16DB99;
     border-radius: 3px;
@@ -175,7 +173,7 @@ h2{
     right: 0;
     margin: auto;
     height: 542px;
-    width: 524px;
+    width: 40%;
     border-radius: 4px;
     box-shadow: 0px 0px 6px 2px #666;
     background-color: white;
@@ -226,7 +224,7 @@ input{
 }
 
 .complete-order-message{
-    width: 504px;
+    width: 38%;
     font-weight: 400px;
     font-size: 32px;
     padding: 15px;
@@ -254,7 +252,7 @@ input{
     right: 0;
     margin: auto;
     height: 542px;
-    width: 524px;
+    width: 40%;
     border-radius: 4px;
     box-shadow: 0px 0px 6px 2px #666;
     background-color: white;
