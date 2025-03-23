@@ -205,7 +205,7 @@ input{
     border: 1.5px solid #757575;
 }
 
-#checkout-button{
+#checkout-button,#submit-rating-button{
     width: 475px;
     height: 70px;
     background-color: #16DB99;
@@ -215,7 +215,7 @@ input{
     margin: auto;
 }
 
-#cancel-button{
+#cancel-button ,#cancel-rating-button{
     width: 475px;
     height: 70px;
     background-color: #c93006;
@@ -235,4 +235,50 @@ input{
     text-align: center;
     background-color: #ECFDF5;
     color: #065F46;
+}
+
+
+#rating-title {
+    color: black;
+    font-weight: 700;
+    font-size: 24px;
+    padding: 20px;
+}
+
+.modal-2 {
+    display: none;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    height: 542px;
+    width: 524px;
+    border-radius: 4px;
+    box-shadow: 0px 0px 6px 2px #666;
+    background-color: white;
+    color: whitesmoke;
+}
+
+.star {
+    font-size: 3rem;
+    color: #ff9800;
+    background-color: unset;
+    border: none;
+}
+
+.star:hover {
+    cursor: pointer;
+}
+
+#rating-form-container {
+    user-select: none;
+}
+
+.current-rating {
+    font-weight: 400px;
+    font-size: 20px;
+    margin: 10px;
+    color: black;
 }

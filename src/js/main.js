@@ -14,17 +14,39 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const checkoutButton = document.getElementById('checkout-button')
     checkoutButton.addEventListener('click', completePayment)
+
+    const submitRatingButton = document.getElementById('submit-rating-button')
+    submitRatingButton.addEventListener('click', submitRating)
+
+    const cancelRatingButton = document.getElementById('cancel-rating-button')
+    cancelRatingButton.addEventListener('click', hideRatingForm)
 })
 
+function getTotalPrice() {
+    return totalPrice;
+}
+  
+function updateTotalPrice(newTotalPrice) {
+    totalPrice = newTotalPrice;
+}
+
+function sumPrice(price) {
+    let totalPrice = getTotalPrice()
+    totalPrice += price;
+    return totalPrice;
+}
+
+function reducePrice(price) {
+    let totalPrice = getTotalPrice()
+    totalPrice -= price;
+    return totalPrice;
+}
 function showMenu() {
     const menuContainer = document.getElementById('menu-container')
     const food = Object.values(FOOD)
     food.forEach(item => {
-        console.log(item, 'item')
-
         const foodMenu = document.createElement('food-menu')
         const itemIngredients = JSON.stringify( item.ingredients.join(', '))
-        console.log(itemIngredients, 'itemIngredients')
         foodMenu.setAttribute('name', item.name)
         foodMenu.setAttribute('ingredients', itemIngredients)
         foodMenu.setAttribute('price', item.price)
@@ -63,16 +85,18 @@ export function addFoodToBasket(item) {
 
 export function addTotalPrice(price) {
     const totalPriceContainer = document.getElementById('total-price')
-    totalPrice += price
-    totalPriceContainer.innerText = `£${totalPrice}`
+    let newTotalPrice = sumPrice(price)
+    totalPriceContainer.innerText = `£${newTotalPrice}`   
+    updateTotalPrice(newTotalPrice)
 }
 
 function reduceTotalPrice(price,removeButton) {
     const totalPriceContainer = document.getElementById('total-price')
-    totalPrice -= price
-    totalPriceContainer.innerText = `£${totalPrice}`
+    let newTotalPrice = reducePrice(price)
+    totalPriceContainer.innerText = `£${newTotalPrice}`
+    updateTotalPrice(newTotalPrice)
     removeButton.parentNode.remove()
-    if (totalPrice === 0) {
+    if (newTotalPrice === 0) {
         const yourOrderContainer = document.getElementById('your-order-container')
         yourOrderContainer.style.display = 'none'
     }
@@ -88,16 +112,52 @@ function hideCheckoutForm() {
     modal.style.display = 'none'
 }
 
+
+function hideRatingForm() {
+    const modal = document.getElementById('modal-2')
+    modal.style.display = 'none'
+}
 function completePayment(e) {
     e.preventDefault()
     const buyerName = document.getElementById('name').value
     hideCheckoutForm()
-
     const yourOrderContainer = document.getElementById('your-order-container')
     yourOrderContainer.innerHTML = `<h3 class="complete-order-message">Thanks,${buyerName}!  Your order is on its way!</h3>`
-
+    displayRatingForm()
 }
 
+function displayRatingForm() {
+    const modal = document.getElementById('modal-2')
+    modal.style.display = 'block'
+    const stars = document.querySelectorAll('.star')
+    const currentRating = document.querySelector('.current-rating')
+    stars.forEach((star, i) => {
+        star.addEventListener('click', () => {
+            let currenStartLevel = i + 1
+            currentRating.innerText = `${currenStartLevel} of 5`
+            stars.forEach((star, j) => {
+                if ( currenStartLevel >=  j + 1) {
+                    star.innerHTML = '&#9733'
+                } else {
+                    star.innerHTML = '&#9734'   
+                }
+            })
+        })
+    })
+}
+
+
+function submitRating() {
+    hideRatingForm()
+    hideMenuContainer()
+    const yourOrderContainer = document.getElementById('your-order-container')
+    yourOrderContainer.innerHTML = `<h3 class="complete-order-message">Thanks for rating us!</h3>`
+}
+
+function hideMenuContainer() {
+    const menuContainer = document.getElementById('menu-container')
+    menuContainer.style.display = 'none'
+}
 
 
 

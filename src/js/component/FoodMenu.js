@@ -15,7 +15,7 @@ export class FoodMenu extends LitElement {
         item: { type: String },
         icon: { type: String },
         name: { type: String },
-        ingredients: { type: Array },
+        ingredients: { type: String },
         price: { type: Number }
     }
 
@@ -33,8 +33,8 @@ export class FoodMenu extends LitElement {
            <img class="food-icon" src="./${this.icon}">
            <div class="food-info">
                 <h3 class="food-name">${this.name}</h3>
-                <h4 class="ingredients">${this.ingredients}</h4>
-                <h5 class="price">£${this.price}</h5>
+                <h3 class="ingredients">${this.ingredients}</h3>
+                <h3 class="price">£${this.price}</h3>
            </div>
            <button class="plus-button" @click=${this._addFood}>
             <img class="plus-icon" src="./assets/plus-icon.png">
